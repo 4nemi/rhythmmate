@@ -17,7 +17,7 @@ const typecheck_result = () => {
                 早起きが得意で、リスクを取る性格です。
             </p>
             <Image
-                    src="/images/dolphin5.jpg"
+                    src="/images/dolphin0.png"
                     alt="Promptopia Logo"
                     width={450}
                     height={450}

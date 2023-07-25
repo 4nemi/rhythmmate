@@ -5,7 +5,7 @@ const namesetting = () => {
     return (
         <section className="w-full flex-center flex-col">
             <Image
-                    src="/images/dolphin1.jpg"
+                    src="/images/dolphin/dolphin1.jpg"
                     alt="Your Partner"
                     width={450}
                     height={450}
