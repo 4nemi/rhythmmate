@@ -5,15 +5,16 @@ export const metadate = {
     description: 'RhythmMate is a sleep tracker'
 }
 
-const RootLayout = ({ children }) => {
+
+const RootLayout = ({ children, pageProps, router }) => {
     return (
         <html lang="en">
             <body>
                 <div className="main">
-                    <div className="gredient" />
+                    {/*<div className="gredient" />*/}
                 </div>
 
-            <main classNam="app">
+            <main>
                 {children}
             </main>
             </body>

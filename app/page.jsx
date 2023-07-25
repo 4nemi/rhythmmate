@@ -1,30 +1,50 @@
+"use client";
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
+
+const pageTransition = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.5 } },
+  exit: { opacity: 0, transition: { duration: 0.5 } },
+};
 
 const Home = () => {
+    const router = useRouter();
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            router.push('/explain');
+        }, 4000);
+
+        return () => clearTimeout(timer);
+    }, [router]);
+
     return (
-        <section className="w-full flex-center flex-col">
-            <h1 className="head_text text-center m-4">
-                RhythmMate
-                <br />
-            </h1>
-            <h2 className="desc text-center">
-                はじめに
-            </h2>
-            <p className="text-center">
-                RhythmMateはキャラクターと一緒に、生活リズムを調えるためのアプリです。
-            </p>
+        <motion.div
+            className="min-h-screen bg-primary-cyan flex items-center justify-center m-0 p-0 box-border"
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={pageTransition}
+        >
+            <div className="text-center">
             <Image
-                    src="/images/undraw_dog_c7i6.svg"
-                    alt="Promptopia Logo"
-                    width={1000}
-                    height={1000}
-                    className="object-contain m-10"
-            /> 
-            <Link href="/typecheck-start" className="black_btn">
-                次へ
-            </Link>
-        </section>
+                src="/images/logo.png"
+                alt="RhythmMate Logo"
+                width={400}
+                height={400}
+                className="object-contain m-10"
+            />
+            <p className="mt-4">
+                <span className="text-2xl text-white">Rhythm</span>
+                <span className="text-2xl text-red-500">Mate</span>
+            </p>
+            </div>
+        </motion.div>
     )
 }
 

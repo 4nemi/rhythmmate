@@ -1,18 +1,25 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const namesetting = () => {
+import Nav from "@/components/Nav";
+import UnderNav from "@/components/UnderNav";
+
+const Home = () => {
     return (
-        <section className="w-full flex-center flex-col">
-            <Image
-                    src="/images/dolphin/dolphin1.jpg"
+        <div>
+            <Nav />
+            <div className="flex justify-center">
+                <Image
+                    src="/images/dolphin/dolphin1.png"
                     alt="Your Partner"
                     width={450}
                     height={450}
                     className="object-contain m-10"
-            /> 
-        </section>
+                /> 
+            </div>
+            <UnderNav /> 
+        </div>
     )
 }
 
-export default namesetting
+export default Home

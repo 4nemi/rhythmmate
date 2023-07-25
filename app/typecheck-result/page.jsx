@@ -11,22 +11,18 @@ const typecheck_result = () => {
             <h2 className="text-center m-2">
                 タイプです
             </h2>
-            <p className="text-center m-5">
-                イルカタイプの特徴: 
-                <br />
-                早起きが得意で、リスクを取る性格です。
-            </p>
+            
             <Image
-                    src="/images/dolphin0.png"
-                    alt="Promptopia Logo"
+                    src="/images/dolphin/dolphin0.png"
+                    alt="Your Chronotype"
                     width={450}
                     height={450}
-                    className="object-contain m-10"
+                    className="object-contain m-2 p-4"
             /> 
-            <p className="text-center m-2">
-                適切な睡眠時間: 7時間
+            <p className="text-center">
+                適切な睡眠時間... 7時間
             </p>
-            <Link href="/timesetting" className="black_btn">
+            <Link href="/timesetting" className="black_btn m-4">
                 次へ
             </Link>
         </section>

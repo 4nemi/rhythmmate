@@ -1,28 +1,28 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const typecheck_start = () => {
+const Explain = () => {
     return (
         <section className="min-h-screen flex flex-center flex-col">
             <Image
-                    src="/images/undraw_medicine_b-1-ol.svg"
+                    src="/images/undraw_dog_c7i6.svg"
                     alt="Promptopia Logo"
-                    width={500}
-                    height={500}
+                    width={1000}
+                    height={1000}
                     className="object-contain m-10 p-10"
             /> 
             <h2 className="desc">
-                自分のタイプを知る
+                はじめに
             </h2>
             <p className="desc text-center m-3">
-                あなたに合った生活スタイルの<br />
-                生き物タイプを知りましょう!
+                RhythmMateはキャラクターと一緒に、<br />
+                生活リズムを調えるためのアプリです。
             </p>
-            <Link href="/typecheck" className="black_btn m-5">
+            <Link href="/typecheck-start" className="black_btn m-5">
                 次へ
             </Link>
         </section>
     )
 }
 
-export default typecheck_start
+export default Explain

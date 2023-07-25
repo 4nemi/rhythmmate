@@ -17,17 +17,17 @@ const namesetting = () => {
     };
 
     return (
-        <section className="w-full flex-center flex-col">
-            <h1 className="text-lg text-center mt-3">あなたの相棒</h1>
+        <section className="min-h-screen flex flex-center flex-col">
+            <h2 className="text-lg text-center mt-10">あなたの相棒</h2>
             <Image
-                    src="/images/dolphin/dolphin1.jpg"
+                    src="/images/dolphin/dolphin1.png"
                     alt="Your Partner"
                     width={450}
                     height={450}
                     className="object-contain m-5"
             /> 
             <p className="text-center m-2">
-                名前をつける
+                なまえをつける
             </p>
             <div className="flex-center">
             <form onSubmit={handleSubmit}>
