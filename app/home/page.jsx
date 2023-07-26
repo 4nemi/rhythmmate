@@ -1,22 +1,14 @@
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
 
 import Nav from "@/components/Nav";
 import UnderNav from "@/components/UnderNav";
+import Avatar from '@components/Avatar';
 
 const Home = () => {
     return (
         <div>
             <Nav />
-            <div className="flex justify-center">
-                <Image
-                    src="/images/dolphin/dolphin1.png"
-                    alt="Your Partner"
-                    width={450}
-                    height={450}
-                    className="object-contain m-10"
-                /> 
-            </div>
+            <Avatar successTime={0}/>
             <UnderNav /> 
         </div>
     )

@@ -4,11 +4,11 @@ import Image from 'next/image';
 const typecheck_result = () => {
     return (
         <section className="w-full flex-center flex-col">
-            <h2 className="text-center mt-10">あなたは...</h2>
-            <h1 className="head_text text-center m-2">
+            <h2 className="text-center text-gray-700 mt-10">あなたは...</h2>
+            <h1 className="blue_gradient text-[70px] font-bold text-center m-2">
                 イルカ
             </h1>
-            <h2 className="text-center m-2">
+            <h2 className="text-center text-gray-700 m-2">
                 タイプです
             </h2>
             

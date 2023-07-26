@@ -32,7 +32,6 @@ const namesetting = () => {
             <div className="flex-center">
             <form onSubmit={handleSubmit}>
                 <label>
-                    なまえ:
                     <input type="text" value={name} onChange={handleChange} />
                 </label>
                 <input type="submit" value="確定" />
