@@ -17,7 +17,7 @@ const namesetting = () => {
     };
 
     return (
-        <section className="min-h-screen flex flex-center flex-col">
+        <section className="min-h-screen flex flex-center flex-col bg-beige">
             <h2 className="text-lg text-center mt-10">あなたの相棒</h2>
             <Image
                     src="/images/dolphin/dolphin1.png"

@@ -7,7 +7,7 @@ import { useState } from 'react';
 const Nav = () => {
     return (
         <nav className="flex-between w-full mb-16 pt-3">
-            <Link href="/namesetting" className="flex gap-2 flex-center">
+            <Link href="/timesetting" className="flex gap-2 flex-center">
                 <Image
                     src="/images/setting2.png"
                     alt="home icon"

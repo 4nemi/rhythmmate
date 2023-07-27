@@ -1,27 +1,73 @@
 "use client";
 
 import Link from 'next/link';
+import { useState } from 'react';
 
-import Question from '@/components/Question';
-import RadioBox from '@components/RadioBox';
+const questions = [
+    '早起きは苦ではない',
+    '夜は24時前には眠くなる',
+    'リスクを取る性格だ',
+    '不眠症だ',
+    '昼頃が一番頭が動いていると思う',
+    '何事もスケジュール通りきっちり進めるタイプだ',
+    '目覚ましがなくても起きれるタイプだ',
+    '起きて30分経つとかなり空腹だ',
+    '7時間以下の睡眠でも問題ない',
+    '新しいチャレンジが好きだ',
+    '他人との衝突を避ける性格だ',
+    '人並み以上に努力する',
+    '週末は夜ふかしして朝遅く起きがちだ',
+    'つい欲望に負けてしまう',
+    '神経質で心配性だ',
+    '仕事や勉強は朝が一番捗る',
+    '人にやさしくフレンドリーな性格だ',
+    '完璧主義だと思う',
+    '夜になると頭が冴えてきて仕事が捗る',
+    '内向的で考えることが好きだ',
+]
 
-const QuestionList = () => {
+const Question = () => {
+    const [answers, setAnswers] = useState(Array(questions.length).fill(null));
+
+    const handleAnswer = (questionIndex, answer) => {
+        const newAnswers = [...answers];
+        newAnswers[questionIndex] = answer;
+        setAnswers(newAnswers);
+    };
+
     return (
-        <div>
-            <div className="text-center">
-                <h2 className="text-xl item-center mt-10">ChronoType Check</h2>
-                <p className="m-10 text-slate-600">以下の質問に対してあなたが直感的に近いと思うものを選んでください。<br />1:そう思う 2: ややそう思う 3: どちらでもない <br />4: あまりそう思わない 5: 思わない</p>
-            </div>
-            <RadioBox />
-            <RadioBox />
-            <RadioBox />
-            <RadioBox />
-            <Link href="/typecheck-result" className="black_btn m-10">
-                はじめる
+        <div className="flex flex-col justify-center">
+            {questions.map((question, questionIndex) => (
+                <div key={questionIndex}>
+                    <h2 className="text-center mt-10">Q{questionIndex + 1}: {question}</h2>
+                    <ul className="grid grid-cols-5 gap-x-5 m-10 max-w-md mx-auto">
+                        {[['1', 'peer-checked:ring-green-500'], ['2', 'peer-checked:ring-cyan-500'], ['3', 'peer-checked:ring-gray-500'], ['4', 'peer-checked:ring-orange-500'], ['5', 'peer-checked:ring-red-500']].map((option, index) => (
+                            <li className="relative" key={index}>
+                                <input
+                                    className="sr-only peer"
+                                    type="radio"
+                                    value={option[0]}
+                                    name={`answer-${questionIndex}`}
+                                    id={`answer_${questionIndex}_${index}`}
+                                    onChange={() => handleAnswer(questionIndex, option[0])}
+                                />
+                                <label
+                                    className={`flex text-s p-7 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 ${option[1]} peer-checked:ring-2 peer-checked:border-transparent`}
+                                    htmlFor={`answer_${questionIndex}_${index}`}
+                                >
+                                    {option[0]}
+                                </label>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+            <Link href="/typecheck-result" className="black_btn m-5">
+                診断結果を見る
             </Link>
-
         </div>
-    )
-} 
 
-export default QuestionList;
+    )}
+           
+
+export default Question;

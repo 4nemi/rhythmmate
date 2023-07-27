@@ -6,7 +6,7 @@ import Avatar from '@components/Avatar';
 
 const Home = () => {
     return (
-        <div>
+        <div className="bg-beige min-h-screen">
             <Nav />
             <Avatar successTime={0}/>
             <UnderNav /> 

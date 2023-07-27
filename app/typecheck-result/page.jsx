@@ -23,7 +23,7 @@ const typecheck_result = () => {
                 適切な睡眠時間... 7時間
             </p>
             <Link href="/timesetting" className="black_btn m-4">
-                次へ
+                目標設定をする
             </Link>
         </section>
     )
