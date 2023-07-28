@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 const Explain = () => {
     return (
-        <section className="min-h-screen flex flex-center flex-col">
+        <section className="min-h-screen flex flex-center flex-col bg-primary-cyan">
             <Image
-                    src="/images/undraw_dog_c7i6.svg"
+                    src="/images/logo.png"
                     alt="Promptopia Logo"
                     width={1000}
                     height={1000}

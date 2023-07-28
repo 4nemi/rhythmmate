@@ -26,16 +26,15 @@ const namesetting = () => {
                     height={450}
                     className="object-contain m-5"
             /> 
-            <p className="text-center m-2">
-                なまえをつける
-            </p>
-            <div className="flex-center">
-            <form onSubmit={handleSubmit}>
-                <label>
-                    <input type="text" value={name} onChange={handleChange} />
-                </label>
-                <input type="submit" value="確定" />
-            </form>
+            <div className="flex">
+                <p className="text-center mx-3">
+                    なまえをつける
+                </p>
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        <input type="text" value={name} onChange={handleChange} className="w-32 h-6"/>
+                    </label>
+                </form>
             </div>
             <Link href="/home" className="black_btn m-5">
                 はじめる

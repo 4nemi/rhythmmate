@@ -36,11 +36,18 @@ const Question = () => {
     };
 
     return (
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center m-0 bg-beige">
+            <h1 className="text-center text-2xl font-bold mt-10">ChronoType Check</h1>
+            <p className="desc text-center">
+                以下の質問に対して<br />あなたが直感的に近いと思うものを<br />選んでください。
+            </p>
+            <p className="text-s text-center text-gray-500 m-2">
+                1: そう思う 2: まあそう思う 3: どちらとも言えない 4: あまりそう思わない 5: そう思わない
+            </p>
             {questions.map((question, questionIndex) => (
                 <div key={questionIndex}>
                     <h2 className="text-center mt-10">Q{questionIndex + 1}: {question}</h2>
-                    <ul className="grid grid-cols-5 gap-x-5 m-10 max-w-md mx-auto">
+                    <ul className="grid grid-cols-5 gap-x-0 m-2 max-w-md mx-auto">
                         {[['1', 'peer-checked:ring-green-500'], ['2', 'peer-checked:ring-cyan-500'], ['3', 'peer-checked:ring-gray-500'], ['4', 'peer-checked:ring-orange-500'], ['5', 'peer-checked:ring-red-500']].map((option, index) => (
                             <li className="relative" key={index}>
                                 <input
@@ -52,10 +59,10 @@ const Question = () => {
                                     onChange={() => handleAnswer(questionIndex, option[0])}
                                 />
                                 <label
-                                    className={`flex text-s p-7 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 ${option[1]} peer-checked:ring-2 peer-checked:border-transparent`}
+                                    className={`flex text-center text-s mx-2 p-4 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 ${option[1]} peer-checked:ring-2 peer-checked:border-transparent`}
                                     htmlFor={`answer_${questionIndex}_${index}`}
                                 >
-                                    {option[0]}
+                                    <p className="text-[14px] mx-2">{option[0]}</p>
                                 </label>
                             </li>
                         ))}

@@ -10,7 +10,7 @@ const RootLayout = ({ children, pageProps, router }) => {
     return (
         <html lang="en">
             <body>
-                <div className="main">
+                <div>
                     {/*<div className="gredient" />*/}
                 </div>
 

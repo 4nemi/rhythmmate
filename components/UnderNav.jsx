@@ -12,14 +12,14 @@ const UnderNav = () => {
     };
 
     return (
-        <nav className="flex justify-between w-full p-0 bg-beige">
+        <nav className="flex flex-between bg-beige">
             <div>
-                <Link href="/home" onClick={handleStart} className="black_btn m-10">
-                    {isStart ? 'おやすみちゅう' : 'スタート'}
+                <Link href="/home" onClick={handleStart} className="black_btn m-8">
+                    <p className='text-xs'>{isStart ? 'おやすみ中' : 'スタート'}</p>
                 </Link>
             </div>
-            <div className="flex gap-2">
-                <Link href="/namesetting" className="flex-center">
+            <div className="flex gap-2 gap-x-0">
+                <Link href="/namesetting">
                     <Image
                         src="/images/book2.png"
                         alt="book icon"
@@ -28,7 +28,7 @@ const UnderNav = () => {
                         className="object-contain"
                     />
                 </Link>
-                <Link href="/namesetting" className="flex-center">
+                <Link href="/namesetting">
                     <Image
                         src="/images/graph2.png"
                         alt="graph icon"

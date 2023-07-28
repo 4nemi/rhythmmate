@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const typecheck_result = () => {
     return (
-        <section className="w-full flex-center flex-col">
+        <div className="w-full flex-center flex-col bg-beige min-h-screen">
             <h2 className="text-center text-gray-700 mt-10">あなたは...</h2>
             <h1 className="blue_gradient text-[70px] font-bold text-center m-2">
                 イルカ
@@ -22,10 +22,10 @@ const typecheck_result = () => {
             <p className="text-center">
                 適切な睡眠時間... 7時間
             </p>
-            <Link href="/timesetting" className="black_btn m-4">
+            <Link href="/timesetting" className="black_btn m-2">
                 目標設定をする
             </Link>
-        </section>
+        </div>
     )
 }
 

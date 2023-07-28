@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 const typecheck_start = () => {
     return (
-        <section className="min-h-screen flex flex-center flex-col">
+        <section className="min-h-screen flex flex-center flex-col bg-primary-cyan">
             <Image
-                    src="/images/undraw_medicine_b-1-ol.svg"
+                    src="/images/dolphin/dolphin0.png"
                     alt="Promptopia Logo"
                     width={500}
                     height={500}
@@ -19,7 +19,7 @@ const typecheck_start = () => {
                 生き物タイプを知りましょう!
             </p>
             <Link href="/typecheck" className="black_btn m-5">
-                次へ
+                診断開始
             </Link>
         </section>
     )

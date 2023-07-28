@@ -37,7 +37,7 @@ const Home = () => {
                 alt="RhythmMate Logo"
                 width={400}
                 height={400}
-                className="object-contain m-10"
+                className="object-contain p-2"
             />
             <p className="mt-4">
                 <span className="text-2xl text-white">Rhythm</span>

@@ -56,12 +56,12 @@ export default function TimePickerValue() {
     const [value, setValue] = useState(dayjs(new Date()));
 
     return (
-        <div className="min-h-screen flex flex-col justify-center m-10">
+        <div className="min-h-screen flex flex-col justify-center bg-beige">
             <div className="grid grid-cols-1 divide-y text-center">
                 <div className="m-2">目標を設定する</div>
                 <div>オススメ 23:00 - 7:00</div>
             </div>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <LocalizationProvider dateAdapter={AdapterDayjs} className="grid grid-col-2">
                 <TimePicker
                     label="就寝時間"
                     defaultValue={value}

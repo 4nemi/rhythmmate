@@ -1,31 +1,35 @@
 {/*アバターを表示するコンポーネント*/}
 
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { WeekContext } from '../contexts/WeekContext';
 
 {/*アバターは睡眠時間によって変化する*/}
 
-const Avatar = ({successTime}) => {
+const Avatar = () => {
+    const { week } = useContext(WeekContext);
     const [avatar, setAvatar] = useState(1);
 
     useEffect(() => {
-        if (successTime >= 4) {
+        const weekNumber = Number(week);
+
+        if (weekNumber === 4) {
             setAvatar(5);
         }
-        else if (successTime >= 3) {
+        else if (weekNumber === 3) {
             setAvatar(4);
         }
-        else if (successTime >= 2) {
+        else if (weekNumber === 2) {
             setAvatar(3);
         }
-        else if (successTime >= 1) {
+        else if (weekNumber === 1) {
             setAvatar(2);
         }
         else {
             setAvatar(1);
         }
-    }, [successTime]);
+    }, [week]);
 
     return (
         <div className="flex justify-center">
