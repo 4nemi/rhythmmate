@@ -2,18 +2,24 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { NameContext } from '@/contexts/NameContext';
+import { useRouter } from 'next/navigation';
 
 const namesetting = () => {
-    const [name, setName] = useState('');
+    const [localname, setLocalName] = useState('');
+    const {setName} = useContext(NameContext);
+    const router = useRouter();
 
     const handleChange = (e) => {
-        setName(e.target.value);
+        setLocalName(e.target.value);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(name);
+        setName(localname);
+        console.log(localname);
+        router.push('/home');
     };
 
     return (
@@ -26,19 +32,19 @@ const namesetting = () => {
                     height={450}
                     className="object-contain m-5"
             /> 
-            <div className="flex">
-                <p className="text-center mx-3">
+            <div className="flex flex-col items-center">
+                <p className="text-center m-3">
                     なまえをつける
                 </p>
                 <form onSubmit={handleSubmit}>
                     <label>
-                        <input type="text" value={name} onChange={handleChange} className="w-32 h-6"/>
+                        <input type="text" value={localname} onChange={handleChange}/>
                     </label>
+                    <div className="flex justify-center">
+                        <button type="submit" className="black_btn m-5">確定</button>
+                    </div>
                 </form>
             </div>
-            <Link href="/home" className="black_btn m-5">
-                はじめる
-            </Link>
         </section>
     )
 }

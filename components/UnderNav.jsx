@@ -19,7 +19,7 @@ const UnderNav = () => {
                 </Link>
             </div>
             <div className="flex gap-2 gap-x-0">
-                <Link href="/namesetting">
+                <Link href="/diary">
                     <Image
                         src="/images/book2.png"
                         alt="book icon"
@@ -28,7 +28,7 @@ const UnderNav = () => {
                         className="object-contain"
                     />
                 </Link>
-                <Link href="/namesetting">
+                <Link href="/graph">
                     <Image
                         src="/images/graph2.png"
                         alt="graph icon"
